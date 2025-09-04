@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-trophy"></i> Codeforces Leaderboard</h1>
+            <p>Real-time competitive programming rankings</p>
+        </header>
+
+        <div class="controls">
+            <button id="refreshBtn" class="btn btn-primary">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+            <div class="loading" id="loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <span id="totalUsers">0</span>
+                <label>Total Users</label>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-medal"></i>
+                <span id="avgRating">0</span>
+                <label>Average Rating</label>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <span id="maxRating">0</span>
+                <label>Max Rating</label>
+            </div>
+        </div>
+
+        <div class="leaderboard-container">
+            <div class="leaderboard-header">
+                <h2><i class="fas fa-list-ol"></i> Leaderboard</h2>
+                <div class="filter-controls">
+                    <select id="ratingFilter">
+                        <option value="all">All Ratings</option>
+                        <option value="expert">Expert+ (1600+)</option>
+                        <option value="specialist">Specialist (1400-1599)</option>
+                        <option value="pupil">Pupil (1200-1399)</option>
+                        <option value="newbie">Newbie (<1200)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="leaderboard" id="leaderboard">
+                <!-- Leaderboard entries will be populated here -->
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="errorText"></span>
+        </div>
+    </div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
